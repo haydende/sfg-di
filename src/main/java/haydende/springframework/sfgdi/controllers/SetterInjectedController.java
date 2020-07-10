@@ -1,6 +1,7 @@
 package haydende.springframework.sfgdi.controllers;
 
 import haydende.springframework.sfgdi.services.GreetingService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 @Controller
@@ -8,7 +9,7 @@ public class SetterInjectedController {
 
     private GreetingService greetingService;
 
-    public void setGreetingService(GreetingService greetingService) {
+    public void setGreetingService(@Qualifier("setterInjectedGreetingService") GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
