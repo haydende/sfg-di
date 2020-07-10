@@ -1,9 +1,6 @@
 package haydende.springframework.sfgdi;
 
-import haydende.springframework.sfgdi.controllers.ConstructorInjectedController;
-import haydende.springframework.sfgdi.controllers.MyController;
-import haydende.springframework.sfgdi.controllers.PropertyInjectedController;
-import haydende.springframework.sfgdi.controllers.SetterInjectedController;
+import haydende.springframework.sfgdi.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -21,10 +18,13 @@ public class SfgDiApplication {
 		System.out.println(propertyInjectedController.getGreeting());
 
 		SetterInjectedController setterInjectedController = (SetterInjectedController) context.getBean("setterInjectedController");
-		System.out.println(setterInjectedController.getGreeting());
+		// System.out.println(setterInjectedController.getGreeting());
 
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) context.getBean("constructorInjectedController");
 		System.out.println(constructorInjectedController.getGreeting());
+
+		I18nController i18nController = (I18nController) context.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
 
 	}
 
